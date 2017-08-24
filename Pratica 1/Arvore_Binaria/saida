@@ -1,0 +1,59 @@
+Ordenados
+
+	Tamanho: 1000
+		Tempo: 0.807484
+		Comparações: 2000
+	Tamanho: 2000
+		Tempo: 1.529072
+		Comparações: 4000
+	Tamanho: 3000
+		Tempo: 2.195842
+		Comparações: 6000
+	Tamanho: 4000
+		Tempo: 2.95095
+		Comparações: 8000
+	Tamanho: 5000
+		Tempo: 0.305521
+		Comparações: 10000
+	Tamanho: 6000
+		Tempo: 0.407478
+		Comparações: 12000
+	Tamanho: 7000
+		Tempo: 0.462762
+		Comparações: 14000
+	Tamanho: 8000
+		Tempo: 0.351323
+		Comparações: 16000
+	Tamanho: 9000
+		Tempo: 0.397717
+		Comparações: 18000
+
+Aleatórios
+
+	Tamanho: 1000
+		Tempo: 0.031023
+		Comparações: 10
+	Tamanho: 2000
+		Tempo: 0.021193
+		Comparações: 20
+	Tamanho: 3000
+		Tempo: 0.023075
+		Comparações: 20
+	Tamanho: 4000
+		Tempo: 0.02468
+		Comparações: 18
+	Tamanho: 5000
+		Tempo: 0.026562
+		Comparações: 22
+	Tamanho: 6000
+		Tempo: 0.026702
+		Comparações: 14
+	Tamanho: 7000
+		Tempo: 0.027399
+		Comparações: 18
+	Tamanho: 8000
+		Tempo: 0.031722
+		Comparações: 18
+	Tamanho: 9000
+		Tempo: 0.026911
+		Comparações: 8
