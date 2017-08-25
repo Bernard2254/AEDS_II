@@ -15,7 +15,7 @@ public class Teste {
 				teste.insere(chave);
 			}
 			double time = System.nanoTime();
-			teste.pesquisa(new MeuItem(size[i]));
+			teste.pesquisa(new MeuItem(size[i]), true);
 			tempo[i]=(System.nanoTime() - time)/1000000;
 			comparacoes[i]=teste.comparacoes;
 		}
@@ -30,13 +30,15 @@ public class Teste {
 		for(int i=0; i< size.length; i++){
 			ArvoreSBB teste = new ArvoreSBB();
 			//System.out.println("Tamanho: " + size[i]);
-			
+			Object obj;
 			for(int y=0; y<size[i]; y++){
+				do{
 				MeuItem chave = new MeuItem(rand.nextInt(10000));
-				teste.insere(chave);
+				obj = teste.insere(chave);
+				}while(obj==null);
 			}
 			double time = System.nanoTime();
-			teste.pesquisa(new MeuItem(10001));
+			teste.pesquisa(new MeuItem(10001), true);
 			tempo[i]=(System.nanoTime() - time)/1000000;
 			comparacoes[i]=teste.comparacoes;
 		}
@@ -46,6 +48,5 @@ public class Teste {
 		System.out.println("\nComparações:");
 		for(int i=0; i<size.length; i++)
 			System.out.print(comparacoes[i] + " ");
-		System.out.println("\nAleatórios\n");
 	}
 }

@@ -14,13 +14,13 @@ public class Arvore_binaria {
 	      central (p.dir);
 	    }
 	  }
-	  private Item pesquisa (Item reg, No p) {
+	  private Item pesquisa (Item reg, No p, boolean comp) {
 	    if (p == null){ 
 	    	return null; // Caso o registro procurado não seja achado
 	    }
-	    else if (reg.compara (p.reg) < 0){ comparacoes++; return pesquisa (reg, p.esq);} // Se o registro procurado for menor que o nó atual, desce na árvore pela esquerda
-	    else if (reg.compara (p.reg) > 0){ comparacoes+=2; return pesquisa (reg, p.dir);} // Se o registro procurado for maior que o nó atual, desce na árvore pela direita
-	    else { return p.reg;} // Se chegar nessa linha de execução é pq o registro procurado é igual ao registro do nó
+	    else if (reg.compara (p.reg) < 0){ if(comp) comparacoes++; return pesquisa (reg, p.esq, comp);} // Se o registro procurado for menor que o nó atual, desce na árvore pela esquerda
+	    else if (reg.compara (p.reg) > 0){ if(comp) comparacoes+=2; return pesquisa (reg, p.dir, comp);} // Se o registro procurado for maior que o nó atual, desce na árvore pela direita
+	    else { if(comp) comparacoes+=2; return p.reg;} // Se chegar nessa linha de execução é pq o registro procurado é igual ao registro do nó
 	  }
 	  
 	  private No insere (Item reg, No p) {
@@ -54,12 +54,16 @@ public class Arvore_binaria {
 	    this.raiz = null;
 	  }
 	  
-	  public Item pesquisa (Item reg) { // Pesquisa o registro passado
-	    return this.pesquisa (reg, this.raiz);
+	  public Item pesquisa (Item reg, boolean comp) { // Pesquisa o registro passado
+	    return this.pesquisa (reg, this.raiz, comp);
 	  }
 
-	  public void insere (Item reg) { // insere o registro passado
-	    this.raiz = this.insere (reg, this.raiz);
+	  public No insere (Item reg) { // insere o registro passado
+		  if(this.pesquisa(reg, false)==null){
+			  this.raiz = this.insere (reg, this.raiz);
+			  return this.raiz;
+		  }
+		  return null;
 	  }
 
 	  public void retira (Item reg) { // retira o registro passado
